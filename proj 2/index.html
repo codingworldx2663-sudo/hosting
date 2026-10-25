@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Builder Pro | Plan Smart. Build Better.</title>
+<style>
+:root{--ink:#172033;--muted:#657087;--orange:#ffad62;--violet:#8067ff;--teal:#20c6b7;--blue:#4d8dff;--shadow:0 18px 55px #0f172a25}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,"Segoe UI",sans-serif;color:var(--ink);background:#f5f7fb;overflow-x:hidden}button,input,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8c7cff;outline-offset:3px}
+.topbar{position:absolute;z-index:10;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:18px clamp(18px,5vw,72px);color:#fff}.brand{display:flex;align-items:center;gap:10px;color:inherit;text-decoration:none;font-weight:850;font-size:1.25rem;letter-spacing:-.04em}.brand-mark{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#ffad62,#ffe0a0);color:#202638;box-shadow:0 8px 22px #ff8a3540;font-size:1.35rem}.brand-pro{color:#ffc58f}.top-actions{display:flex;gap:10px}.small-btn,.btn{border:0;border-radius:999px;padding:12px 19px;font-weight:750;transition:transform .2s,box-shadow .2s}.small-btn{color:#fff;background:#ffffff18;border:1px solid #ffffff60;backdrop-filter:blur(12px)}.small-btn:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px #0002}
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;padding:125px clamp(22px,8vw,120px) 95px;color:#fff;isolation:isolate;background:#182033;overflow:hidden}.hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:linear-gradient(90deg,#0a101fdb,#0a101f75 57%,#0a101f33),url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85");background-size:cover;background-position:center;animation:zoom 18s ease-in-out infinite alternate;transition:background-image .7s}.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,#080f1f94,transparent 45%);pointer-events:none}@keyframes zoom{to{transform:scale(1.08)}}.hero-content{max-width:780px;animation:rise .85s both}.eyebrow{display:inline-flex;gap:9px;align-items:center;padding:9px 14px;border:1px solid #ffffff55;background:#ffffff18;border-radius:999px;font-size:.8rem;letter-spacing:.08em;backdrop-filter:blur(12px);margin-bottom:22px}.pulse{width:8px;height:8px;background:#53e2c1;border-radius:50%;box-shadow:0 0 0 5px #53e2c128}h1{font-size:clamp(2.8rem,6.5vw,6.2rem);line-height:.98;letter-spacing:-.065em;margin:0 0 22px}.gradient-text{background:linear-gradient(90deg,#ffbd7b,#ffe3a5,#a8f4e7);-webkit-background-clip:text;background-clip:text;color:transparent}.hero p{font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.75;color:#e5e9f2;max-width:630px;margin:0 0 30px}.hero-actions{display:flex;flex-wrap:wrap;gap:13px}.btn-primary{color:#202638;background:linear-gradient(135deg,#ffb36f,#ffd47f);box-shadow:0 12px 30px #ffad5a35}.btn-glass{background:#ffffff18;color:#fff;border:1px solid #ffffff65;backdrop-filter:blur(10px)}.slide-dots{position:absolute;right:clamp(22px,7vw,100px);bottom:36px;display:flex;gap:9px;align-items:center}.slide-dot{width:10px;height:10px;border:0;border-radius:99px;background:#ffffff80;padding:0;transition:.25s}.slide-dot.active{width:31px;background:#fff}
+.hidden{display:none!important}.wizard-wrap{min-height:100svh;padding:35px 18px 70px;background:radial-gradient(circle at 5% 5%,#eeeaff,transparent 30%),radial-gradient(circle at 95% 20%,#d9fbf4,transparent 28%),#f5f7fb}.wizard-top{max-width:1050px;margin:0 auto 22px;display:flex;justify-content:space-between;align-items:center;gap:15px}.wizard-top .brand{color:var(--ink)}.wizard-top .brand-mark{width:36px;height:36px}.back-home{border:1px solid #dfe4ed;background:#fff;color:var(--ink);padding:10px 14px;border-radius:999px;font-weight:700}.wizard-card{max-width:1050px;margin:auto;padding:clamp(20px,4vw,38px);background:#ffffffef;border:1px solid white;border-radius:28px;box-shadow:var(--shadow)}.wizard-heading{margin-bottom:28px}.kicker{color:#7a62e8;font-weight:850;font-size:.78rem;text-transform:uppercase;letter-spacing:.13em}.wizard-heading h2{font-size:clamp(1.8rem,4vw,2.8rem);margin:10px 0;letter-spacing:-.05em}.wizard-heading p{color:var(--muted);line-height:1.65;margin:0}.progress-track{height:7px;background:#edf0f7;border-radius:99px;margin:22px 0 30px;overflow:hidden}.progress-bar{height:100%;width:20%;background:linear-gradient(90deg,var(--violet),var(--teal));border-radius:inherit;transition:width .3s}.wizard-step{display:none;animation:rise .35s both}.wizard-step.active{display:block}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.field{display:flex;flex-direction:column;gap:8px}.field label{color:#4a5367;font-size:.86rem;font-weight:750}.field input,.field select{width:100%;min-width:0;padding:13px 14px;border:1px solid #dfe4ed;border-radius:13px;background:#fbfcff;color:var(--ink)}.field input:focus,.field select:focus{border-color:#8c7cff;box-shadow:0 0 0 4px #8c7cff20}.wizard-actions{display:flex;justify-content:space-between;gap:12px;margin-top:28px;flex-wrap:wrap}.btn-secondary{color:var(--ink);background:#edf0f7}.wizard-next{color:#fff;background:linear-gradient(100deg,#8067ff,#4d8dff)}
+.plan-grid,.choice-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.plan-card,.choice-card{border:2px solid #e7eaf2;border-radius:18px;overflow:hidden;background:#fff;transition:.2s}.plan-card{cursor:pointer}.plan-card.selected,.choice-card.selected{border-color:#8067ff;box-shadow:0 0 0 3px #8067ff18;background:#f8f6ff}.plan-card:hover,.choice-card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}.plan-card img{width:100%;height:145px;object-fit:cover;display:block;background:#e8ebf2}.plan-body{padding:14px}.plan-body h3{margin:0 0 7px;font-size:1.05rem}.plan-body p,.choice-card p{margin:0;color:var(--muted);font-size:.88rem;line-height:1.55}.plan-body input{accent-color:#8067ff;margin-top:12px}.choice-card{text-align:left;padding:20px;color:var(--ink)}.choice-card .emoji{font-size:1.8rem;display:block;margin-bottom:12px}.choice-card h3{margin:0 0 8px}.status{color:var(--muted);min-height:1.4em;font-size:.9rem;margin-top:10px}
+.estimate-total{padding:23px;border-radius:20px;color:#fff;background:linear-gradient(120deg,#22294b,#6653c9 65%,#a47aff)}.estimate-total span{color:#e5e2ff;font-size:.9rem}.estimate-total strong{display:block;font-size:clamp(2rem,5vw,3.1rem);letter-spacing:-.05em;margin:7px 0}.estimate-total p{color:#e5e2ff;margin:0;line-height:1.6;font-size:.88rem}.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:18px}.summary-panel{padding:20px;border:1px solid #e6eaf2;border-radius:18px;background:#fff}.summary-panel h3{margin:0 0 16px}.cost-line{display:flex;justify-content:space-between;gap:15px;padding:10px 0;border-bottom:1px solid #edf0f6;font-size:.9rem}.cost-line:last-child{border-bottom:0;font-weight:800}.chart-wrap{display:grid;place-items:center;gap:15px}.pie-chart{width:min(230px,65vw);aspect-ratio:1;border-radius:50%;background:conic-gradient(#8067ff 0 35%,#ff9a48 35% 60%,#20c6b7 60% 80%,#4d8dff 80% 100%)}.chart-legend{display:grid;gap:8px;width:100%}.chart-legend span{display:flex;align-items:center;gap:9px;font-size:.86rem;color:var(--muted)}.swatch{width:11px;height:11px;border-radius:4px;flex:0 0 11px}.material-list{display:grid;gap:10px}.material-item{display:flex;justify-content:space-between;gap:15px;padding:13px;border:1px solid #e7eaf2;border-radius:13px;background:#fbfcff}.material-item span{color:var(--muted);font-size:.86rem}.disclaimer{margin-top:18px;padding:14px;border-radius:13px;background:#fff8e9;border:1px solid #ffebc0;color:#785622;font-size:.82rem;line-height:1.6}.room-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.room-card{overflow:hidden;border-radius:17px;border:1px solid #e6eaf2;background:#fff}.room-card img{width:100%;height:180px;object-fit:cover;display:block;background:#e8ebf2}.room-card div{padding:12px 14px;font-weight:750}.demo-box{padding:18px;border:1px dashed #cfd5e4;border-radius:16px;color:var(--muted);line-height:1.65;background:#fafbff}
+.chat-fab{position:fixed;z-index:30;right:22px;bottom:22px;width:58px;height:58px;border:0;border-radius:50%;color:white;background:linear-gradient(135deg,#8067ff,#4d8dff);box-shadow:0 12px 30px #3f35a550;font-size:1.4rem}.chat-panel{position:fixed;z-index:31;right:22px;bottom:92px;width:min(360px,calc(100vw - 32px));height:420px;display:none;flex-direction:column;background:#fff;border:1px solid #e4e8f0;border-radius:22px;box-shadow:var(--shadow);overflow:hidden}.chat-panel.open{display:flex;animation:rise .25s both}.chat-head{padding:16px 18px;display:flex;justify-content:space-between;align-items:center;color:#fff;background:#252c4b}.chat-head button{border:0;color:#fff;background:transparent;font-size:1.25rem}.chat-messages{flex:1;padding:14px;overflow:auto;background:#f7f8fc}.chat-message{max-width:88%;padding:10px 12px;margin:0 0 10px;border-radius:13px;font-size:.88rem;line-height:1.5;background:#fff;border:1px solid #e5e9f1;overflow-wrap:anywhere}.chat-message.user{margin-left:auto;background:#eeeaff;border-color:#ddd5ff}.chat-form{display:flex;gap:8px;padding:10px;border-top:1px solid #e5e9f1}.chat-form input{min-width:0;flex:1;padding:11px;border:1px solid #dfe4ed;border-radius:12px}.chat-form button{border:0;padding:0 14px;border-radius:12px;color:#fff;background:#6653c9}.toast{position:fixed;z-index:50;bottom:92px;left:50%;transform:translate(-50%,20px);opacity:0;background:#172033;color:white;padding:13px 18px;border-radius:13px;box-shadow:var(--shadow);transition:.3s;pointer-events:none;font-size:.9rem;max-width:90vw;text-align:center}.toast.show{opacity:1;transform:translate(-50%,0)}@keyframes rise{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:760px){.hero{padding-top:115px}.top-actions .small-btn:first-child{display:none}.plan-grid,.choice-grid{grid-template-columns:1fr}.plan-card{display:grid;grid-template-columns:125px 1fr}.plan-card img{height:100%;min-height:135px}.form-grid,.summary-grid,.room-grid{grid-template-columns:1fr}.wizard-top{align-items:flex-start}.wizard-actions .btn{padding:12px 15px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<header class="topbar" id="homeTopbar">
+ <a class="brand" href="/">
+    <span class="brand-mark">⌂</span>
+    <span>Builder<span class="brand-pro">Pro</span></span>
+</a>
+  <div class="top-actions"><button class="small-btn" id="feedbackBtn">Feedback</button><button class="small-btn" id="chatTopBtn">Chatbot ✦</button></div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow"><span class="pulse"></span> YOUR HOME. YOUR PLAN. YOUR BUDGET.</div>
+    <h1>Build your dream.<br><span class="gradient-text">Know your budget.</span></h1>
+    <p>Plan your home step by step — from site details and floor-plan choices to material quality, room inspiration and a clear budget estimate.</p>
+    <div class="hero-actions"><button class="btn btn-primary" id="startBtn">Start Construction ↗</button><button class="btn btn-glass" id="demosBtn">Check out Demo </button></div>
+  </div>
+  <div class="slide-dots" aria-label="Black Background Images"><button class="slide-dot active" aria-label="Show house image 1"></button><button class="slide-dot" aria-label="Show house image 2"></button><button class="slide-dot" aria-label="Show house image 3"></button></div>
+</section>
+
+<section class="wizard-wrap hidden" id="demoSection">
+  <div class="wizard-card">
+    <div class="wizard-heading"><span class="kicker">House inspiration</span><h2>Explore home styles</h2><p>These are inspiration images, not generated architectural drawings or build-ready plans.</p></div>
+    <div class="room-grid">
+      <article class="room-card"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="Modern house exterior"><div>Modern exterior</div></article>
+      <article class="room-card"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Living room interior"><div>Living room</div></article>
+      <article class="room-card"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80" alt="Contemporary interior"><div>Contemporary interior</div></article>
+      <article class="room-card"><img loading="lazy" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80" alt="Luxury house design"><div>Luxury house style</div></article>
+    </div>
+    <div class="wizard-actions"><button class="btn btn-secondary" id="closeDemosBtn">Back to Home</button><button class="btn wizard-next" id="startFromDemosBtn">Start Construction ↗</button></div>
+  </div>
+</section>
+
+<section class="wizard-wrap hidden" id="wizardSection">
+  <div class="wizard-top"><a class="brand" href="#"><span class="brand-mark">⌂</span><span>Builder<span class="brand-pro">Pro</span></span></a><button class="back-home" id="homeBtn">← Homepage</button></div>
+  <div class="wizard-card">
+    <div class="wizard-heading"><span class="kicker" id="stepKicker">Step 01 of 05</span><h2 id="stepTitle">Tell us about your site</h2><p id="stepDescription">A few details help us prepare a starting point for your home plan.</p><div class="progress-track"><div class="progress-bar" id="progressBar"></div></div></div>
+    <form id="siteForm" class="wizard-step active">
+      <div class="form-grid">
+        <div class="field"><label for="state">State</label><select id="state" required><option value="">Select state</option><option>Andhra Pradesh</option><option>Telangana</option><option>Karnataka</option><option>Tamil Nadu</option><option>Maharashtra</option><option>Delhi</option><option>Other</option></select></div>
+        <div class="field"><label for="city">City / Town</label><input id="city" required placeholder="e.g. Vijayawada"></div>
+        <div class="field"><label for="plotLength">Plot length (ft)</label><input id="plotLength" type="number" min="10" max="1000" required placeholder="e.g. 40"></div>
+        <div class="field"><label for="plotWidth">Plot width (ft)</label><input id="plotWidth" type="number" min="10" max="1000" required placeholder="e.g. 30"></div>
+        <div class="field"><label for="floors">Number of floors</label><select id="floors"><option value="1">Ground floor only</option><option value="2">Ground + 1 floor</option><option value="3">3 floors</option><option value="4">4 floors</option></select></div>
+        <div class="field"><label for="bedrooms">Bedrooms</label><select id="bedrooms"><option value="1">1 BHK</option><option value="2" selected>2 BHK</option><option value="3">3 BHK</option><option value="4">4 BHK</option></select></div>
+        <div class="field"><label for="bathrooms">Bathrooms</label><select id="bathrooms"><option value="1">1</option><option value="2" selected>2</option><option value="3">3</option><option value="4">4</option></select></div>
+        <div class="field"><label for="budget">Approximate budget (₹)</label><input id="budget" type="number" min="100000" max="100000000" required placeholder="e.g. 2500000"></div>           
+      </div>
+      <div class="wizard-actions"><button type="button" class="btn btn-secondary" id="cancelWizardBtn">Cancel</button><button type="submit" class="btn wizard-next">Show House Plans →</button></div>
+    </form>
+
+    <div class="wizard-step" id="plansStep"><div class="plan-grid" id="planGrid"></div><p class="status" id="planStatus">Choose a plan to continue. Images are visual references only.</p><div class="wizard-actions"><button class="btn btn-secondary" data-back="0">← Back</button><button class="btn wizard-next" id="plansNextBtn">Choose Quality →</button></div></div>
+    <div class="wizard-step" id="qualityStep"><div class="choice-grid">
+      <button type="button" class="choice-card" data-quality="less"><span class="emoji">🌱</span><h3>Less / Budget</h3><p>Cost-conscious finish choices. Structural safety must still meet professional specifications.</p></button>
+      <button type="button" class="choice-card" data-quality="moderate"><span class="emoji">🏡</span><h3>Moderate</h3><p>Balanced finish allowances for a practical, comfortable home.</p></button>
+      <button type="button" class="choice-card" data-quality="luxury"><span class="emoji">✨</span><h3>Luxury</h3><p>Higher finish allowances for premium tiles, fittings and interior details.</p></button>
+    </div><p class="status" id="qualityStatus">Choose a quality level.</p><div class="wizard-actions"><button class="btn btn-secondary" data-back="1">← Back</button><button class="btn wizard-next" id="qualityNextBtn">View Estimate →</button></div></div>
+
+    <div class="wizard-step" id="estimateStep">
+      <div class="estimate-total"><span>Preliminary total budget estimate</span><strong id="estimateTotal">₹0</strong><p id="estimateSummary"></p></div>
+      <div class="summary-grid"><div class="summary-panel"><h3>Estimated cost split</h3><div id="costLines"></div></div><div class="summary-panel"><h3>Budget pie chart</h3><div class="chart-wrap"><div class="pie-chart" id="pieChart" role="img" aria-label="Estimated cost distribution pie chart"></div><div class="chart-legend" id="chartLegend"></div></div></div></div>
+      <div class="summary-panel" style="margin-top:18px"><h3>Indicative material allowances</h3><div class="material-list" id="materialList"></div></div>
+      <div class="disclaimer">Important: this is a preliminary illustrative estimate, not a quotation. Prices, quantities and cost shares are not verified live market data. Confirm design, structural specifications, taxes, permissions, soil conditions and local itemised rates with qualified professionals.</div>
+      <div class="wizard-actions"><button class="btn btn-secondary" data-back="2">← Change quality</button><button class="btn wizard-next" id="previewNextBtn">Room Preview →</button></div>
+      <div class="wizard-actions"><button class="btn btn-secondary" id="downloadEstimateBtn">Download estimate (.txt)</button><button class="btn btn-secondary" id="restartBtn">Start Over</button></div>
+    </div>
+
+    <div class="wizard-step" id="previewStep"><div class="wizard-heading"><h2>Room inspiration</h2><p>These are sample reference photos, not a custom generated video or construction-ready design.</p></div>
+      <div class="room-grid"><article class="room-card"><img loading="lazy" src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80" alt="Living room"><div>Living room</div></article><article class="room-card"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80" alt="Interior"><div>Bedroom / interior</div></article><article class="room-card"><img loading="lazy" src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80" alt="Kitchen"><div>Kitchen / finishing style</div></article><article class="room-card"><img loading="lazy" src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80" alt="House exterior"><div>Exterior</div></article></div>
+      <div class="demo-box" style="margin-top:18px"><strong>Demo video / AI-generated images</strong><br>This version displays sample photos. Custom image or video generation requires a suitable service connected through a backend.</div>
+      <div class="wizard-actions"><button class="btn btn-secondary" data-back="3">← Back to Estimate</button><button class="btn wizard-next" id="finishBtn">Finish & View Estimate ✓</button></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<aside class="chat-panel" id="chatPanel" aria-label="Builder Pro chatbot"><div class="chat-head"><strong>Builder Pro Assistant</strong><button id="closeChatBtn" aria-label="Close chatbot">×</button></div><div class="chat-messages" id="chatMessages"><div class="chat-message">Hi! Ask me about planning a house, construction budgets, materials or what to ask a contractor. This demo uses built-in replies; connect an AI API for full AI answers.</div></div><form class="chat-form" id="chatForm"><input id="chatInput" placeholder="Ask a construction question..." aria-label="Chat message" required><button type="submit">Send</button></form></aside>
+<button class="chat-fab" id="chatFab" aria-label="Open chatbot">✦</button><div class="toast" id="toast" role="status"></div>
+
+<script>
+const $ = id => document.getElementById(id);
+const money = value => new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(value);
+const heroImages = [
+ "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85",
+ "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=2200&q=85",
+ "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=85"
+];
+let currentSlide=0;
+function setSlide(i){currentSlide=i;const layer=document.querySelector(".hero::before");document.querySelector(".hero").style.backgroundImage=`linear-gradient(90deg,#0a101fdb,#0a101f75 57%,#0a101f33),url("${heroImages[i]}")`;document.querySelectorAll(".slide-dot").forEach((d,j)=>d.classList.toggle("active",i===j));}
+heroImages.forEach(src=>{const img=new Image();img.src=src;});
+document.querySelectorAll(".slide-dot").forEach((d,i)=>d.addEventListener("click",()=>setSlide(i)));
+setInterval(()=>setSlide((currentSlide+1)%heroImages.length),6500);
+
+function showToast(message){const t=$("toast");t.textContent=message;t.classList.add("show");clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>t.classList.remove("show"),3200);}
+function showHome(){ $("homeTopbar").classList.remove("hidden");$("home").classList.remove("hidden");$("wizardSection").classList.add("hidden");$("demoSection").classList.add("hidden");window.scrollTo({top:0,behavior:"smooth"});}
+function showWizard(){ $("homeTopbar").classList.add("hidden");$("home").classList.add("hidden");$("demoSection").classList.add("hidden");$("wizardSection").classList.remove("hidden");showStep(0);window.scrollTo({top:0,behavior:"smooth"});}
+function showDemos(){ $("homeTopbar").classList.add("hidden");$("home").classList.add("hidden");$("wizardSection").classList.add("hidden");$("demoSection").classList.remove("hidden");window.scrollTo({top:0,behavior:"smooth"});}
+$("startBtn").addEventListener("click",showWizard);$("startFromDemosBtn").addEventListener("click",showWizard);$("demosBtn").addEventListener("click",showDemos);$("closeDemosBtn").addEventListener("click",showHome);$("homeBtn").addEventListener("click",showHome);$("cancelWizardBtn").addEventListener("click",showHome);
+$("feedbackBtn").addEventListener("click",()=>{const f=prompt("Share your feedback about Builder Pro:");if(f&&f.trim())showToast("Thank you! Feedback noted in this demo.");});
+
+const app={site:null,plan:null,quality:null,estimate:null};
+const meta=[
+ ["Step 01 of 05","Tell us about your site","A few details help us prepare a starting point for your home plan."],
+ ["Step 02 of 05","Choose a house plan","Select a layout style to continue. These cards are illustrative references, not architectural drawings."],
+ ["Step 03 of 05","Choose your material quality","Your selection changes the assumed cost rate and indicative material allowance."],
+ ["Step 04 of 05","Review your budget","See the estimated total and how the planning allowance is divided."],
+ ["Step 05 of 05","Preview your home style","Browse room and exterior inspiration before you finish."]
+];
+function showStep(step){["siteForm","plansStep","qualityStep","estimateStep","previewStep"].forEach((id,i)=>$(id).classList.toggle("active",i===step));$("stepKicker").textContent=meta[step][0];$("stepTitle").textContent=meta[step][1];$("stepDescription").textContent=meta[step][2];$("progressBar").style.width=`${(step+1)*20}%`;window.scrollTo({top:0,behavior:"smooth"});}
+
+$("siteForm").addEventListener("submit",e=>{
+ e.preventDefault();const length=Number($("plotLength").value),width=Number($("plotWidth").value);
+ if(length<=0||width<=0){showToast("Please enter valid plot dimensions.");return;}
+ app.site={state:$("state").value,city:$("city").value.trim(),length,width,floors:Number($("floors").value),bedrooms:Number($("bedrooms").value),bathrooms:Number($("bathrooms").value),budget:Number($("budget").value)};
+ renderPlans();showStep(1);
+});
+const plans=[
+ {id:"compact",name:"Compact Smart Home",desc:"Space-conscious layout idea for a smaller family.",image:heroImages[0],factor:.92},
+ {id:"family",name:"Family Comfort Home",desc:"Balanced layout idea with room for family living.",image:heroImages[1],factor:1},
+ {id:"premium",name:"Open Premium Home",desc:"Open-plan inspiration with premium finish ideas.",image:heroImages[2],factor:1.15}
+];
+function renderPlans(){
+ $("planGrid").innerHTML=plans.map(p=>`<article class="plan-card ${app.plan?.id===p.id?"selected":""}" data-plan="${p.id}" tabindex="0" role="button" aria-pressed="${app.plan?.id===p.id}"><img src="${p.image}" alt="${p.name} inspiration"><div class="plan-body"><h3>${p.name}</h3><p>${p.desc}</p><input type="radio" name="planChoice" value="${p.id}" ${app.plan?.id===p.id?"checked":""} aria-label="Select ${p.name}"></div></article>`).join("");
+ document.querySelectorAll(".plan-card").forEach(card=>{const choose=()=>{app.plan=plans.find(p=>p.id===card.dataset.plan);document.querySelectorAll(".plan-card").forEach(c=>{c.classList.toggle("selected",c===card);c.setAttribute("aria-pressed",String(c===card));c.querySelector("input").checked=c===card;});$("planStatus").textContent=`${app.plan.name} selected.`;};card.addEventListener("click",choose);card.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();choose();}});});
+}
+document.querySelectorAll("[data-back]").forEach(b=>b.addEventListener("click",()=>showStep(Number(b.dataset.back))));
+$("plansNextBtn").addEventListener("click",()=>{if(!app.plan){showToast("Please select a house plan first.");return;}app.quality=null;document.querySelectorAll(".choice-card").forEach(c=>c.classList.remove("selected"));$("qualityStatus").textContent="Choose a quality level.";showStep(2);});
+document.querySelectorAll(".choice-card").forEach(card=>card.addEventListener("click",()=>{app.quality=card.dataset.quality;document.querySelectorAll(".choice-card").forEach(c=>c.classList.toggle("selected",c===card));$("qualityStatus").textContent=`${card.querySelector("h3").textContent} selected.`;}));
+$("qualityNextBtn").addEventListener("click",()=>{if(!app.quality){showToast("Please choose Less, Moderate or Luxury.");return;}buildEstimate();showStep(3);});
+
+function buildEstimate(){
+ const s=app.site,p=app.plan,plotArea=s.length*s.width,areaPerFloor=plotArea*.70,totalArea=areaPerFloor*s.floors;
+ const rates={less:1500,moderate:2000,luxury:3000},names={less:"Less / Budget",moderate:"Moderate",luxury:"Luxury"},factors={less:.92,moderate:1,luxury:1.45};
+ const base=totalArea*rates[app.quality]*factors[app.quality]*p.factor,contingency=base*.10,total=base+contingency;
+ const parts=[{name:"Structure & core works",share:.35,color:"#8067ff"},{name:"Materials",share:.25,color:"#ff9a48"},{name:"Labour",share:.20,color:"#20c6b7"},{name:"Finishing",share:.20,color:"#4d8dff"}];
+ app.estimate={site:s,plan:p,quality:names[app.quality],plotArea,areaPerFloor,totalArea,rate:rates[app.quality],base,contingency,total,parts};
+ $("estimateTotal").textContent=money(total);$("estimateSummary").textContent=`${s.city}, ${s.state} · ${s.floors} floor(s) · ${s.bedrooms} BHK · ${p.name} · ${names[app.quality]}. Assumed built-up area: ${Math.round(totalArea).toLocaleString("en-IN")} sq. ft.`;
+ $("costLines").innerHTML=parts.map(x=>`<div class="cost-line"><span>${x.name} (${x.share*100}%)</span><strong>${money(base*x.share)}</strong></div>`).join("")+`<div class="cost-line"><span>Contingency reserve (10%)</span><strong>${money(contingency)}</strong></div><div class="cost-line"><span>Total</span><strong>${money(total)}</strong></div>`;
+ let cursor=0;const stops=parts.map(x=>{const start=cursor;cursor+=x.share*100;return `${x.color} ${start}% ${cursor}%`;});$("pieChart").style.background=`conic-gradient(${stops.join(",")})`;
+ $("chartLegend").innerHTML=parts.map(x=>`<span><i class="swatch" style="background:${x.color}"></i>${x.name}: ${money(base*x.share)}</span>`).join("");
+ const materials={
+ less:[["Cement","Economy allowance; confirm brand and grade"],["Steel","Engineer-specified grade only"],["Blocks / bricks","Standard local option"],["Tiles & fittings","Economy finish allowance"]],
+ moderate:[["Cement","Common approved brand allowance"],["Steel","Engineer-specified grade only"],["Blocks / bricks","Standard quality option"],["Tiles & fittings","Mid-range finish allowance"]],
+ luxury:[["Cement","Approved brand; verify local quote"],["Steel","Engineer-specified grade only"],["Blocks / bricks","Selected option per design"],["Tiles & fittings","Premium finish allowance"]]
+ };
+ $("materialList").innerHTML=materials[app.quality].map(([n,d])=>`<div class="material-item"><strong>${n}</strong><span>${d}</span></div>`).join("");
+}
+$("previewNextBtn").addEventListener("click",()=>showStep(4));$("finishBtn").addEventListener("click",()=>{showToast("Your demo estimate is ready.");showStep(3);});
+$("restartBtn").addEventListener("click",()=>{app.site=null;app.plan=null;app.quality=null;app.estimate=null;$("siteForm").reset();showStep(0);});
+$("downloadEstimateBtn").addEventListener("click",()=>{
+ if(!app.estimate){showToast("Please complete the steps first.");return;}const d=app.estimate;
+ const report=`BUILDER PRO — PRELIMINARY CONSTRUCTION ESTIMATE\n============================================\nLocation: ${d.site.city}, ${d.site.state}\nPlot dimensions: ${d.site.length} ft x ${d.site.width} ft\nPlot area: ${d.plotArea.toLocaleString("en-IN")} sq. ft.\nFloors: ${d.site.floors}\nBedrooms: ${d.site.bedrooms}\nBathrooms: ${d.site.bathrooms}\nSelected plan: ${d.plan.name}\nQuality: ${d.quality}\nAssumed built-up area: ${Math.round(d.totalArea).toLocaleString("en-IN")} sq. ft.\n\n${d.parts.map(x=>`${x.name}: ${money(d.base*x.share)}`).join("\n")}\nBase estimate: ${money(d.base)}\nContingency (10%): ${money(d.contingency)}\nTOTAL PLANNING ESTIMATE: ${money(d.total)}\n\nIllustrative estimate only, not a quote or engineering design. Assumes 70% plot coverage per floor and may not comply with local rules. Get itemised local quotations and professional advice.`;
+ const url=URL.createObjectURL(new Blob([report],{type:"text/plain;charset=utf-8"}));const a=document.createElement("a");a.href=url;a.download="Builder-Pro-Estimate.txt";document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(url);showToast("Estimate downloaded.");
+});
+
+// Local demo chatbot. A real AI chatbot needs a secure server-side AI API integration.
+function addChat(message,type=""){const d=document.createElement("div");d.className=`chat-message ${type}`;d.textContent=message;$("chatMessages").appendChild(d);$("chatMessages").scrollTop=$("chatMessages").scrollHeight;}
+function openChat(){$("chatPanel").classList.add("open");$("chatInput").focus();}
+$("chatFab").addEventListener("click",()=>$("chatPanel").classList.toggle("open"));$("chatTopBtn").addEventListener("click",openChat);$("closeChatBtn").addEventListener("click",()=>$("chatPanel").classList.remove("open"));
+$("chatForm").addEventListener("submit",e=>{
+ e.preventDefault();const message=$("chatInput").value.trim();if(!message)return;addChat(message,"user");const q=message.toLowerCase();let answer="For a reliable answer, compare itemised local quotations and consult a qualified architect or engineer. This is a demo chatbot; connect an AI service on the backend for full AI responses.";
+ if(q.includes("cement"))answer="Cement type and quantity depend on the design and work scope. Ask your engineer for specifications and compare current local dealer quotations.";
+ else if(q.includes("steel")||q.includes("tmt"))answer="Steel grade and quantity must follow the structural engineer's drawings. Never reduce structural specifications just to cut costs.";
+ else if(q.includes("budget")||q.includes("cost")||q.includes("price"))answer="This is an early planning allowance based on assumed area and rates, not live prices. Get current material, labour and finishing quotes locally.";
+ else if(q.includes("plan")||q.includes("bedroom")||q.includes("bhk"))answer="Choose site dimensions, floors and room needs first. These sample plan cards are inspiration only; ask an architect for a site-specific plan.";
+ else if(q.includes("hello")||q.includes("hi"))answer="Hello! Ask me about construction budgets, materials or what to ask your contractor.";
+ addChat(answer);$("chatInput").value="";
+});
+</script>
+
